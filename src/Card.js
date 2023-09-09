@@ -1,6 +1,5 @@
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import { useState } from "react";
 
 const questions = [
   {
@@ -36,29 +35,17 @@ const questions = [
   },
 ];
 
-function App() {
-  const [selectedId, setselectedId] = useState(null);
-
-  function handleClick(id) {
-    setselectedId(id !== selectedId ? id : null);
-  }
+function Card() {
   return (
-    <div className="flashcards">
-      {questions.map((questions) => (
-        <div
-          key={questions.id}
-          className={questions.id === selectedId ? "selected" : ""}
-          onClick={() => handleClick(questions.id)}
-        >
-          <p>
-            {questions.id === selectedId
-              ? questions.answer
-              : questions.question}
-          </p>
+    <div>
+      <div className="card" style={{ width: "20rem", height: "10rem" }}>
+        <div className="card-body">
+          {" "}
+          <h1 className="card-title">bulk</h1>
         </div>
-      ))}
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Card;
